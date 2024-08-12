@@ -1,15 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RandomUsers.API.Models;
 
 namespace RandomUsers.API.Context
 {
-    public class UserDbContext : DbContext
+    public class RandomUsersDbContext : DbContext
     {
-        public UserDbContext(DbContextOptions<UserDbContext> options)
+        public RandomUsersDbContext(DbContextOptions<RandomUsersDbContext> options)
         : base(options)
         {
         }
 
-        public DbSet<User> User { get; set; }
+        public DbSet<UserModel> User { get; set; }
+        public DbSet<LoginModel> Login { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

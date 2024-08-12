@@ -11,15 +11,16 @@ namespace RandomUsers.API.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly UserDbContext _context;
+        private readonly RandomUsersDbContext _context;
 
-        public UserController(UserDbContext context)
+        public UserController(RandomUsersDbContext context)
         {
             _context = context;
         }
 
         // GET: api/<UserController>
-        [HttpGet]        
+        [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetUsers()
         {
             var users = await _context.User.ToListAsync();

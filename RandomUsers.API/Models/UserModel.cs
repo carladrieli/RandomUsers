@@ -1,9 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace RandomUsers.API
+namespace RandomUsers.API.Models
 {
-    public class User
+    public class UserModel
     {
         [Key]
         [Column("uuid")]
