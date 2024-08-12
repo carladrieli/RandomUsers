@@ -1,0 +1,23 @@
+﻿@model IEnumerable<RandomUsers.Web.Models.UserModel>
+
+<h2>Users List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>           
+            <th>Gender</th>
+            <th>Cell</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Email</td>               
+                <td>@user.Gender</td>
+                <td>@user.Cell</td>
+            </tr>
+        }
+    </tbody>
+</table>
